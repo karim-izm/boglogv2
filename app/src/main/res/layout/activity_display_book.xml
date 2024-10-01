@@ -1,0 +1,90 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    tools:context=".services.DisplayBookActivity"
+    android:background="@android:color/white">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/tv_title_header"
+        android:layout_width="363dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/beyond_the_mountains"
+        android:text=" Book Details"
+        android:textColor="@android:color/black"
+        android:textSize="50sp"
+        android:textStyle="bold" />
+
+    <!-- ISBN Display -->
+    <TextView
+        android:id="@+id/tv_isbn_display"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ISBN: [Your ISBN Here]"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_marginBottom="16dp"
+        android:textColor="@android:color/black"/>
+
+    <!-- Title Display -->
+    <TextView
+        android:id="@+id/tv_title_display"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Title: [Your Title Here]"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_marginBottom="16dp"
+        android:textColor="@android:color/black"/>
+
+    <!-- Author Display -->
+    <TextView
+        android:id="@+id/tv_author_display"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Author: [Your Author Here]"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_marginBottom="32dp"
+        android:textColor="@android:color/black"/>
+
+    <!-- Button Layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="24dp">
+
+        <Button
+            android:id="@+id/btn_edit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Edit"
+            android:layout_marginEnd="12dp"
+            android:padding="12dp"
+            android:background="@drawable/rounded_button"
+            android:textColor="@android:color/black"
+            android:fontFamily="@font/beyond_the_mountains"
+            android:textSize="18sp"/>
+
+        <Button
+            android:id="@+id/btn_delete"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Delete"
+            android:layout_marginStart="12dp"
+            android:padding="12dp"
+            android:background="@drawable/rounded_button"
+            android:textColor="@android:color/black"
+            android:fontFamily="@font/beyond_the_mountains"
+            android:textSize="18sp"/>
+    </LinearLayout>
+</LinearLayout>

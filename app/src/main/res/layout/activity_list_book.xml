@@ -1,0 +1,44 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="@android:color/black"
+    tools:context=".services.ListBookActivity">
+
+    <!-- Title -->
+
+    <!-- Description -->
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="0dp"
+        android:fontFamily="@font/beyond_the_mountains"
+        android:text="List of Books"
+        android:textColor="@android:color/white"
+        android:textSize="60sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Here are all your saved books:"
+        android:textSize="16sp"
+        android:textColor="@android:color/white"
+        android:fontFamily="@font/roboto"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- RecyclerView for book list -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_books"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="8dp"
+        android:background="@android:color/black" />
+</LinearLayout>

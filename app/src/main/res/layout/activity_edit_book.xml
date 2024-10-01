@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="@color/black">
+
+    <TextView
+        android:id="@+id/tv_edit_book"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit Book Details"
+        android:textSize="50sp"
+        android:fontFamily="@font/beyond_the_mountains"
+        android:textStyle="bold"
+        android:layout_marginBottom="24dp"
+        android:layout_marginTop="24dp"
+        android:textColor="@color/white" />
+
+    <EditText
+        android:id="@+id/edittext_isbn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter ISBN"
+        android:padding="12dp"
+        android:background="@drawable/rounded_input"
+        android:fontFamily="@font/roboto"
+        android:textColor="@android:color/black"
+        android:textColorHint="#808080"
+        android:textSize="16sp"
+        android:layout_marginBottom="16dp" />
+
+    <EditText
+        android:id="@+id/edittext_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Title"
+        android:padding="12dp"
+        android:background="@drawable/rounded_input"
+        android:fontFamily="@font/roboto"
+        android:textColor="@android:color/black"
+        android:textColorHint="#808080"
+        android:textSize="16sp"
+        android:layout_marginBottom="24dp" />
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save Changes"
+        android:padding="12dp"
+        android:background="@drawable/rounded_button"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
+</LinearLayout>

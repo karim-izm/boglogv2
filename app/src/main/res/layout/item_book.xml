@@ -1,0 +1,44 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/item_background"
+    android:padding="16dp"
+    android:layout_margin="8dp"
+    android:elevation="4dp"
+    android:layout_marginBottom="8dp">
+
+    <!-- Book Title -->
+    <TextView
+        android:id="@+id/tv_book_title"
+        android:layout_width="357dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:fontFamily="@font/beyond_the_mountains"
+        android:text="Book Title"
+        android:textColor="@android:color/holo_purple"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <!-- Book Author -->
+    <TextView
+        android:id="@+id/tv_book_author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Author"
+        android:textSize="20sp"
+        android:textColor="@android:color/black"
+        android:fontFamily="@font/roboto"
+        android:layout_marginTop="2dp"/>
+
+    <!-- Book ISBN -->
+    <TextView
+        android:id="@+id/tv_book_isbn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ISBN"
+        android:textSize="14sp"
+        android:textColor="@android:color/black"
+        android:fontFamily="@font/roboto"
+        android:layout_marginTop="2dp"/>
+</LinearLayout>

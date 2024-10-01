@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/black"
+    android:gravity="center_horizontal"
+    android:padding="24dp">
+
+    <!-- Login Title -->
+    <TextView
+        android:id="@+id/textview_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:textSize="80sp"
+        android:textColor="@android:color/white"
+        android:fontFamily="@font/beyond_the_mountains"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="20dp"/>
+
+    <!-- Welcome Message -->
+    <TextView
+        android:id="@+id/textview_welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome to Boglog"
+        android:textSize="16sp"
+        android:textColor="@android:color/white"
+        android:fontFamily="@font/roboto"
+        android:layout_marginBottom="32dp"/>
+
+    <!-- Username Input -->
+    <EditText
+        android:id="@+id/edittext_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Username"
+        android:background="@drawable/rounded_input"
+        android:padding="12dp"
+        android:fontFamily="@font/roboto"
+        android:textColor="@android:color/black"
+        android:textColorHint="#808080"
+        android:textSize="16sp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="50dp"/>
+
+    <!-- Password Input -->
+    <EditText
+        android:id="@+id/edittext_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:background="@drawable/rounded_input"
+        android:inputType="textPassword"
+        android:padding="12dp"
+        android:fontFamily="@font/roboto"
+        android:textColor="@android:color/black"
+        android:textColorHint="#808080"
+        android:textSize="16sp"
+        android:layout_marginBottom="24dp"/>
+
+    <!-- Remember Me checkbox -->
+
+    <!-- Login Button -->
+
+    <CheckBox
+        android:id="@+id/checkbox_remember_me"
+        android:layout_width="357dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/roboto"
+        android:text="Remember Me"
+        android:textColor="@android:color/white"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/button_login"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/rounded_button"
+        android:backgroundTint="@android:color/white"
+        android:fontFamily="@font/beyond_the_mountains"
+        android:padding="12dp"
+        android:text="Login"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
+
+    <!-- Register Button -->
+    <Button
+        android:id="@+id/button_register"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_button"
+        android:backgroundTint="@android:color/white"
+        android:fontFamily="@font/beyond_the_mountains"
+        android:padding="12dp"
+        android:text="Register"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
+</LinearLayout>
