@@ -17,7 +17,7 @@
         android:textSize="60sp"
         android:textColor="@android:color/white"
         android:fontFamily="@font/beyond_the_mountains"
-        android:layout_marginBottom="0dp"/>
+        android:layout_marginBottom="0dp" />
 
     <!-- Subtitle / Description -->
     <TextView
@@ -28,7 +28,7 @@
         android:textSize="16sp"
         android:textColor="@android:color/white"
         android:fontFamily="@font/roboto"
-        android:layout_marginBottom="100dp"/>
+        android:layout_marginBottom="100dp" />
 
     <!-- ISBN Input Field -->
     <EditText
@@ -42,7 +42,7 @@
         android:textColor="@android:color/black"
         android:textColorHint="#808080"
         android:textSize="16sp"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="16dp" />
 
     <!-- Title Input Field -->
     <EditText
@@ -56,7 +56,19 @@
         android:textColor="@android:color/black"
         android:textColorHint="#808080"
         android:textSize="16sp"
-        android:layout_marginBottom="24dp"/>
+        android:layout_marginBottom="24dp" />
+
+    <!-- Category Spinner -->
+    <Spinner
+        android:id="@+id/spinner_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_input"
+        android:padding="12dp"
+        android:fontFamily="@font/roboto"
+        android:textColorHint="@color/white"
+        android:textSize="16sp"
+        android:layout_marginBottom="24dp" />
 
     <!-- Add Book Button -->
     <Button
@@ -70,6 +82,6 @@
         android:text="Add Book"
         android:textColor="@android:color/black"
         android:textSize="18sp"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp" />
 
 </LinearLayout>

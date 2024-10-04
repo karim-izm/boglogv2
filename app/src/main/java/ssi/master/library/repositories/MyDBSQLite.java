@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class MyDBSQLite extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "library.db";
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 3;
 
     private static final String CREATE_TABLE_USERS = "CREATE TABLE users (" +
             "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -18,7 +18,8 @@ public class MyDBSQLite extends SQLiteOpenHelper {
             "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
             "isbn TEXT NOT NULL, " +
             "title TEXT NOT NULL, " +
-            "author TEXT NOT NULL)";
+            "author TEXT NOT NULL, " +
+            "category TEXT NOT NULL)";
 
     public MyDBSQLite(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);

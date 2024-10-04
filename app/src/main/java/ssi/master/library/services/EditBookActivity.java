@@ -1,8 +1,10 @@
 package ssi.master.library.services;
 
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import ssi.master.library.R;
@@ -11,28 +13,40 @@ import ssi.master.library.repositories.BookDAO;
 
 public class EditBookActivity extends AppCompatActivity {
 
-    private EditText etIsbn, etTitle;
+    private EditText etIsbn, etTitle ;
+
     private Button btnSave;
     private BookDAO bookDAO;
-    private int bookId; // ID of the book to edit
+    private int bookId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_book);
 
+        String[] categories = {"Science", "Literature", "History", "Technology", "Art"};
+
         etIsbn = findViewById(R.id.edittext_isbn);
         etTitle = findViewById(R.id.edittext_title);
+
         btnSave = findViewById(R.id.btn_save);
+
+
+        Spinner categorySpinner = findViewById(R.id.spinner_category);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, categories);
+        categorySpinner.setAdapter(adapter);
+
+
 
         bookDAO = new BookDAO(this);
         bookDAO.open();
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        // Retrieve the book details from the intent
+
         bookId = getIntent().getIntExtra("bookId", -1);
         if (bookId == -1) {
             Toast.makeText(this, "Invalid book ID", Toast.LENGTH_SHORT).show();
-            finish(); // Close the activity if ID is invalid
+            finish();
             return;
         }
 
@@ -42,9 +56,12 @@ public class EditBookActivity extends AppCompatActivity {
         btnSave.setOnClickListener(v -> {
             String isbn = etIsbn.getText().toString().trim();
             String title = etTitle.getText().toString().trim();
+            String author = bookDAO.getBookById(bookId).getAuthor();
+            String category = categorySpinner.getSelectedItem().toString();
 
             if (!isbn.isEmpty() && !title.isEmpty()) {
-                Book book = new Book(isbn, title, getIntent().getStringExtra("username"));
+                Book book = new Book(isbn, title, category , getIntent().getStringExtra("username"));
+                book.setAuthor(author);
                 book.setId(bookId); // Set the ID for the book being edited
                 boolean success = bookDAO.updateBook(book);
 

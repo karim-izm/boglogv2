@@ -39,6 +39,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder
         holder.tvBookTitle.setText(book.getTitle());
         holder.tvBookAuthor.setText("Author: " + book.getAuthor());
         holder.tvBookIsbn.setText("ISBN: " + book.getIsbn());
+        holder.tvBookCategory.setText("Category: " + book.getCategory());
 
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, DisplayBookActivity.class);
@@ -53,13 +54,14 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder
     }
 
     static class BookViewHolder extends RecyclerView.ViewHolder {
-        TextView tvBookTitle, tvBookAuthor, tvBookIsbn;
+        TextView tvBookTitle, tvBookAuthor, tvBookIsbn, tvBookCategory;  // Add TextView for category
 
         public BookViewHolder(@NonNull View itemView) {
             super(itemView);
             tvBookTitle = itemView.findViewById(R.id.tv_book_title);
             tvBookAuthor = itemView.findViewById(R.id.tv_book_author);
             tvBookIsbn = itemView.findViewById(R.id.tv_book_isbn);
+            tvBookCategory = itemView.findViewById(R.id.tv_book_category);
         }
     }
 }

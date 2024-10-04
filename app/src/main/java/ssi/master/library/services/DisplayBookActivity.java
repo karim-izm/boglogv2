@@ -36,6 +36,7 @@ public class DisplayBookActivity extends AppCompatActivity {
         bookDAO.open();
 
         bookId = getIntent().getIntExtra("bookId", -1);
+        System.out.println(bookId);
         if (bookId != -1) {
             displayBookDetails(bookId);
         }
@@ -68,7 +69,6 @@ public class DisplayBookActivity extends AppCompatActivity {
     }
 
     private void editBook() {
-
         Intent intent = new Intent(DisplayBookActivity.this, EditBookActivity.class);
         intent.putExtra("bookId", bookId);
         startActivity(intent);

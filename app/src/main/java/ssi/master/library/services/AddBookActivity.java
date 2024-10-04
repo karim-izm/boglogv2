@@ -1,6 +1,8 @@
 package ssi.master.library.services;
 
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.Toast;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,7 +15,11 @@ import ssi.master.library.repositories.BookDAO;
 
 public class AddBookActivity extends AppCompatActivity {
 
-    private EditText etIsbn, etTitle;
+    private EditText etIsbn, etTitle , etCategory;
+
+    String[] categories = {"Science", "Literature", "History", "Technology", "Art"};
+
+
     private Button btnAdd;
     private BookDAO bookDAO;
     private String author;
@@ -25,10 +31,19 @@ public class AddBookActivity extends AppCompatActivity {
 
         etIsbn = findViewById(R.id.edittext_isbn);
         etTitle = findViewById(R.id.edittext_title);
+
         btnAdd = findViewById(R.id.btn_add);
 
         bookDAO = new BookDAO(this);
         bookDAO.open();
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, categories);
+
+        Spinner categorySpinner = findViewById(R.id.spinner_category);
+
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        categorySpinner.setAdapter(adapter);
+
 
         // Retrieve the author from the intent
         author = getIntent().getStringExtra("username");
@@ -36,9 +51,10 @@ public class AddBookActivity extends AppCompatActivity {
         btnAdd.setOnClickListener(v -> {
             String isbn = etIsbn.getText().toString().trim();
             String title = etTitle.getText().toString().trim();
+            String category = categorySpinner.getSelectedItem().toString();
 
             if (!isbn.isEmpty() && !title.isEmpty()) {
-                Book book = new Book(isbn, title, author);
+                Book book = new Book(isbn, title, category , author);
                 long id = bookDAO.addBook(book);
 
                 if (id != -1) {

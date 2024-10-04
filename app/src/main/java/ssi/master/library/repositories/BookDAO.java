@@ -33,8 +33,11 @@ public class BookDAO {
         values.put("isbn", book.getIsbn());
         values.put("title", book.getTitle());
         values.put("author", book.getAuthor());
+        values.put("category", book.getCategory());
+
         return db.insert("books", null, values);
     }
+
 
     public boolean updateBook(Book book) {
         ContentValues values = new ContentValues();
@@ -67,14 +70,16 @@ public class BookDAO {
                 @SuppressLint("Range") String isbn = cursor.getString(cursor.getColumnIndex("isbn"));
                 @SuppressLint("Range") String title = cursor.getString(cursor.getColumnIndex("title"));
                 @SuppressLint("Range") String author = cursor.getString(cursor.getColumnIndex("author"));
+                @SuppressLint("Range") String category = cursor.getString(cursor.getColumnIndex("category"));
 
-                Book book = new Book(id, isbn, title, author);
+                Book book = new Book(id, isbn, title, category , author);
                 books.add(book);
             }
             cursor.close();
         }
         return books;
     }
+
 
     public Book getBook(String isbn) {
         Cursor cursor = db.query("books", null, "isbn = ?", new String[]{isbn}, null, null, null);
@@ -84,8 +89,10 @@ public class BookDAO {
             @SuppressLint("Range") int id = cursor.getInt(cursor.getColumnIndex("id"));
             @SuppressLint("Range") String title = cursor.getString(cursor.getColumnIndex("title"));
             @SuppressLint("Range") String author = cursor.getString(cursor.getColumnIndex("author"));
+            @SuppressLint("Range") String category = cursor.getString(cursor.getColumnIndex("category"));
+
             cursor.close();
-            return new Book(id, isbn, title, author);
+            return new Book(id, isbn, title, category ,  author);
         }
         return null;
     }
@@ -98,9 +105,11 @@ public class BookDAO {
             @SuppressLint("Range") String isbn = cursor.getString(cursor.getColumnIndex("isbn"));
             @SuppressLint("Range") String title = cursor.getString(cursor.getColumnIndex("title"));
             @SuppressLint("Range") String author = cursor.getString(cursor.getColumnIndex("author"));
+            @SuppressLint("Range") String category = cursor.getString(cursor.getColumnIndex("category"));
             cursor.close();
-            return new Book(id, isbn, title, author);
+            return new Book(id, isbn, title, category , author);
         }
         return null;
     }
+
 }
